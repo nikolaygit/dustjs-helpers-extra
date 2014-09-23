@@ -99,3 +99,17 @@ describe('iterate', function () {
   });
 
 });
+
+describe('if', function() {
+  this.timeout(15000);
+
+  it('no params', function() {
+
+    var context = {myArr: [{"name": "AA"}, {"name": "BB"}]};
+    var code = 'start.{@contains}aa{/contains}.end';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, 'start..end');
+    });
+  });
+
+});

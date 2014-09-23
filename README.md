@@ -5,6 +5,20 @@ Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helper
 
 # Extra Helpers
 
+
+## Contains
+
+```
+{@contains arr=myObj key=myKey value=myValue}{/contains}
+
+arr - the array containing the objects to be iterated 
+
+key - the key in the object
+
+value - the value of the key to be checked.
+```
+
+
 ## Iterate
 
 Build upon: https://github.com/rragan/dust-motes/tree/master/src/helpers/control/iterate
@@ -32,6 +46,10 @@ sort - Optional. If omitted, no sort is done. Values allowed:
 ```
 npm install dustjs-helpers-extra
 ```
+
+# Test
+
+Run ``grunt test``.
 
 # History
 
