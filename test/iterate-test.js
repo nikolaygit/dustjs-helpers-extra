@@ -3,7 +3,7 @@ require('dustjs-helpers');
 
 var dust = require('../lib/dust-helpers');
 dust.isDebug = true;
-dust.debugLevel = 'DEBUG';
+dust.debugLevel = 'WARN';
 
 var assert = require('assert');
 
@@ -103,7 +103,7 @@ describe('iterate', function () {
 
 });
 
-describe('contains', function() {
+describe('{@contains}', function() {
 
   it('no params', function() {
 
@@ -133,21 +133,138 @@ describe('contains', function() {
     });
   });
 
-  it.only('all param is not Boolean', function() {
+  it('scope param is empty', function() {
 
     var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
-    var code = '{@contains arr=myArr key=name scope="invalidScope"}block{/contains}';
+    var code = '{@contains arr=myArr key="name" scope=""}block{/contains}';
     dust.renderSource(code, context, function (err, out) {
       assert.equal(out, '');
     });
   });
 
-  it('once - key param is missing', function() {
+  it('scope param is invalid string', function() {
 
-    var context = {myArr: []};
-    var code = '{@contains arr=myArr key=name}block{/contains}';
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="name" scope="invalidScope"}block{/contains}';
     dust.renderSource(code, context, function (err, out) {
       assert.equal(out, '');
+    });
+  });
+
+  it('once - key not found', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="invalidKey"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('once - key found, render body', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="name"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, 'block');
+    });
+  });
+
+  it('once - key found, render body with context vars', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}], myVar: "myValue"};
+    var code = '{@contains arr=myArr key="name"}{myVar}{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, 'myValue');
+    });
+  });
+
+  it('once - value not found', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="name" value="John"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('once - value found, render body', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="name" value="Steve"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, 'block');
+    });
+  });
+
+  it('once - value found, render body with context vars', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}], myVar: "myValue"};
+    var code = '{@contains arr=myArr key="name" value="Steve"}{myVar}{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, 'myValue');
+    });
+  });
+
+  it('all - key not found', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="invalidKey" scope="all"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('all - key found, render body', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="name" scope="all"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, 'block');
+    });
+  });
+
+  it('all - value not found - in no array element', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="name" value="John" scope="all"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('all - value not found - only in one array element (first)', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key="name" value="Steve" scope="all"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('all - value not found - only in one array element (middle)', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}, {"name": "Peter"}]};
+    var code = '{@contains arr=myArr key="name" value="Tom" scope="all"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('all - value not found - only in one array element (last)', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}, {"name": "Peter"}]};
+    var code = '{@contains arr=myArr key="name" value="Peter" scope="all"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('all - value found, render body', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Steve"}]};
+    var code = '{@contains arr=myArr key="name" value="Steve" scope="all"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, 'block');
     });
   });
 

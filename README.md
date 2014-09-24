@@ -57,4 +57,5 @@ Run ``grunt test``.
 
 # History
 
-* 0.1.0 - added new context variable ``{$parentKey}`` and tests.
+* 0.2.0 - new ``{@contains}`` helper and tests.
+* 0.1.0 - iterate: new context variable ``{$parentKey}`` and tests.
