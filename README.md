@@ -11,7 +11,7 @@ Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helper
 The Dust.js contains helper checks whether in a given array keys and values exist.
 
 ```
-{@contains arr=myObj key=myKey value=myValue all=true}{/contains}
+{@contains arr=myObj key="myKey" value="myValue" scope="once/all"}{/contains}
 
 arr - the array containing the objects to be iterated 
 
