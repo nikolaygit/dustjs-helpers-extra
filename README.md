@@ -8,6 +8,8 @@ Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helper
 
 ## Contains
 
+The Dust.js contains helper checks whether in a given array keys and values exist.
+
 ```
 {@contains arr=myObj key=myKey value=myValue all=true}{/contains}
 
@@ -21,6 +23,43 @@ scope - 'once' or 'all'.
     'once' checks whether there is at least one element in the array has the given key and value.
     'all' checks whether all elements in the array have the given key and value.
 ```
+
+### Examples
+
+For the context:
+
+```
+{
+  myArr: [
+    {"name": "Steve"},
+    {"name": "Steve"}
+  ]
+}
+```
+
+template #1:
+
+```
+{@contains arr=myArr key="name" value="Steve" scope="all"}
+block
+{/contains}
+```
+
+renders to:
+
+```
+block
+```
+
+and template #2:
+
+```
+{@contains arr=myArr key="name" value="John" scope="all"}
+block
+{/contains}
+```
+
+renders to empty string.
 
 
 ## Iterate
