@@ -6,7 +6,7 @@
     "url": "https://github.com/nikolayhg"
   },
   "homepage": "https://github.com/nikolayhg/dustjs-helpers-extra",
-  "description": "Extra Helpers for dustjs-linkedin package: iterate",
+  "description": "Extra Helpers for dustjs-linkedin package: iterate, contains",
   "scripts": {
     "test": "grunt test"
   },
