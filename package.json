@@ -20,7 +20,8 @@
     "dustjs",
     "helpers",
     "extra",
-    "iterate"
+    "iterate",
+    "contains"
   ],
   "peerDependencies": {
     "dustjs-helpers": "~1.3.0"
