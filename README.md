@@ -29,8 +29,6 @@ Build upon: https://github.com/rragan/dust-motes/tree/master/src/helpers/control
 
 Additional context variable: ``{$parentKey}`` giving the parent key in a nested iteration.
 
-## Definition 
-
 ```
 {@iterate for=obj}{$key}-{$value} of type {$type} with parent key: {$parentKey}{~n}{/iter}
 
