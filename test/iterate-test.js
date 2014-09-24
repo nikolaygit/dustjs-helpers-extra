@@ -1,6 +1,9 @@
 require('dustjs-linkedin');
 require('dustjs-helpers');
+
 var dust = require('../lib/dust-helpers');
+dust.isDebug = true;
+dust.debugLevel = 'DEBUG';
 
 var assert = require('assert');
 
@@ -100,15 +103,51 @@ describe('iterate', function () {
 
 });
 
-describe('if', function() {
-  this.timeout(15000);
+describe('contains', function() {
 
   it('no params', function() {
 
     var context = {myArr: [{"name": "AA"}, {"name": "BB"}]};
-    var code = 'start.{@contains}aa{/contains}.end';
+    var code = '{@contains}block{/contains}';
     dust.renderSource(code, context, function (err, out) {
-      assert.equal(out, 'start..end');
+      assert.equal(out, '');
+    });
+  });
+  this.timeout(15000);
+
+  it('arr param does not exist', function() {
+
+    var context = {myArr: [{"name": "AA"}, {"name": "BB"}]};
+    var code = '{@contains arr=noArr}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('arr param is not array', function() {
+
+    var context = {myArr: "stringValue"};
+    var code = '{@contains arr=myArr}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it.only('all param is not Boolean', function() {
+
+    var context = {myArr: [{"name": "Steve"}, {"name": "Tom"}]};
+    var code = '{@contains arr=myArr key=name scope="invalidScope"}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+
+  it('once - key param is missing', function() {
+
+    var context = {myArr: []};
+    var code = '{@contains arr=myArr key=name}block{/contains}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
     });
   });
 

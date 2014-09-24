@@ -9,13 +9,17 @@ Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helper
 ## Contains
 
 ```
-{@contains arr=myObj key=myKey value=myValue}{/contains}
+{@contains arr=myObj key=myKey value=myValue all=true}{/contains}
 
 arr - the array containing the objects to be iterated 
 
 key - the key in the object
 
 value - the value of the key to be checked.
+
+scope - 'once' or 'all'.
+    'once' checks whether there is at least one element in the array has the given key and value.
+    'all' checks whether all elements in the array have the given key and value.
 ```
 
 
