@@ -1,4 +1,4 @@
-dustjs-helpers-extra
+dustjs-helpers-extra  [![Build Status][travis-image]][travis-url] [![NPM version][npm-image]][npm-url]
 ====================
 
 Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helpers.
@@ -97,3 +97,9 @@ Run ``grunt test``.
 * 0.3.0 - upgrades npm dependency ``dustjs-helpers`` from ``~1.3.0`` to ``~1.5.0``. See the [braking changes](https://github.com/linkedin/dustjs-helpers/wiki/Deprecated-Features) for your dustjs templates.
 * 0.2.0 - new ``{@contains}`` helper and tests.
 * 0.1.0 - iterate: new context variable ``{$parentKey}`` and tests.
+
+
+[travis-image]: https://travis-ci.org/nikolayhg/dustjs-helpers-extra.svg?branch=master
+[travis-url]: https://travis-ci.org/nikolayhg/dustjs-helpers-extra
+[npm-url]:  https://npmjs.org/package/dustjs-helpers-extra
+[npm-image]: http://img.shields.io/npm/v/dustjs-helpers-extra.svg?style=flat
