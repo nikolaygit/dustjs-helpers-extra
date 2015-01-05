@@ -88,6 +88,10 @@ sort - Optional. If omitted, no sort is done. Values allowed:
 npm install dustjs-helpers-extra
 ```
 
+# Requirements
+
+* dustjs-helpers: ~1.5.0
+
 # Test
 
 Run ``grunt test``.
