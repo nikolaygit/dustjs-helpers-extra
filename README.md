@@ -98,6 +98,7 @@ Run ``grunt test``.
 
 # History
 
+* 0.4.0 - change GIT repository to https://github.com/nikolaygit/dustjs-helpers-extra
 * 0.3.1 - add travis CI.
 * 0.3.0 - upgrades npm dependency ``dustjs-helpers`` from ``~1.3.0`` to ``~1.5.0``. See the [braking changes](https://github.com/linkedin/dustjs-helpers/wiki/Deprecated-Features) for your dustjs templates.
 * 0.2.0 - new ``{@contains}`` helper and tests.

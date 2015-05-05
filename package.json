@@ -1,11 +1,11 @@
 {
   "name": "dustjs-helpers-extra",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": {
     "name": "Nikolay Georgiev",
-    "url": "https://github.com/nikolayhg"
+    "url": "https://github.com/nikolaygit"
   },
-  "homepage": "https://github.com/nikolayhg/dustjs-helpers-extra",
+  "homepage": "https://github.com/nikolaygit/dustjs-helpers-extra",
   "description": "Extra Helpers for dustjs-linkedin package: iterate, contains",
   "scripts": {
     "test": "grunt test"
@@ -13,7 +13,7 @@
   "main": "./lib/dust-helpers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nikolayhg/dustjs-helpers-extra.git"
+    "url": "https://github.com/nikolaygit/dustjs-helpers-extra.git"
   },
   "keywords": [
     "dust",
