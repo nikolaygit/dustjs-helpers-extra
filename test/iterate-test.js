@@ -103,6 +103,22 @@ describe('iterate', function () {
 
 });
 
+
+
+describe('{@some}', function() {
+
+  it('no params', function() {
+    var context = {myArr: [{"name": "AA"}, {"name": "BB"}]};
+    var code = '{@some}block{/some}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+  this.timeout(15000);
+});
+
+
+
 describe('{@contains}', function() {
 
   it('no params', function() {

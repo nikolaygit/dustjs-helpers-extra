@@ -69,7 +69,7 @@ Build upon: https://github.com/rragan/dust-motes/tree/master/src/helpers/control
 Additional context variable: ``{$parentKey}`` giving the parent key in a nested iteration.
 
 ```
-{@iterate for=obj}{$key}-{$value} of type {$type} with parent key: {$parentKey}{~n}{/iter}
+{@iterate for=obj}{$key}-{$value} of type {$type} with parent key: {$parentKey}{~n}{/iterate}
 
 key - object of the iteration - Mandatory parameter
 
@@ -90,7 +90,7 @@ npm install dustjs-helpers-extra
 
 # Requirements
 
-* dustjs-helpers: ~1.5.0
+* dustjs-helpers: ^1.5.0
 
 # Test
 
