@@ -1,19 +1,26 @@
 {
   "name": "dustjs-helpers-extra",
-  "version": "0.4.0",
-  "author": {
+  "version": "1.0.0",
+  "author": "Marketing Engineering Team",
+  "contributors": [
+    {
+      "name": "Andrea Cadeddu",
+      "email": "andrea.cadeddu@hyatt.com"
+    },
+    {
     "name": "Nikolay Georgiev",
     "url": "https://github.com/nikolaygit"
-  },
-  "homepage": "https://github.com/nikolaygit/dustjs-helpers-extra",
-  "description": "Extra Helpers for dustjs-linkedin package: iterate, contains",
+    }
+  ],
+  "homepage": "https://github.com/deddu/dustjs-helpers-extra",
+  "description": "Extra Helpers for dustjs-linkedin package: iterate, all, some, contains",
   "scripts": {
     "test": "grunt test"
   },
   "main": "./lib/dust-helpers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nikolaygit/dustjs-helpers-extra.git"
+    "url": "https://github.com/deddu/dustjs-helpers-extra.git"
   },
   "keywords": [
     "dust",
