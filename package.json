@@ -15,7 +15,7 @@
   "homepage": "https://github.com/deddu/dustjs-helpers-extra",
   "description": "Extra Helpers for dustjs-linkedin package: iterate, all, some, contains",
   "scripts": {
-    "test": "grunt test"
+    "test": "node ./node_modules/grunt/lib/grunt.js test"
   },
   "main": "./lib/dust-helpers",
   "repository": {
