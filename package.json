@@ -1,5 +1,5 @@
 {
-  "name": "dustjs-helpers-extra",
+  "name": "@hyatt/dustjs-helpers-extra",
   "version": "1.0.0",
   "author": "Marketing Engineering Team",
   "contributors": [
@@ -20,7 +20,10 @@
   "main": "./lib/dust-helpers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/deddu/dustjs-helpers-extra.git"
+    "url": "ssh://git@stash.hyattdev.com:7999/~1325695/dustjs-helpers-extra.git"
+  },
+  "publishConfig": {
+    "registry": "http://artifacts.hyattdev.com:8081/artifactory/api/npm/npm-local/"
   },
   "keywords": [
     "dust",
