@@ -10,7 +10,7 @@ Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helper
 Iterates trough the key value pairs of an object.
 
 
-- for - required - iteratee
+- key - required - iteratee
 - sort - Optional. If omitted, no sort is done. Values allowed:
      - sort="asc" - sort ascending (per JavaScript array sort rules)
      - sort="desc" - sort descending
@@ -32,7 +32,7 @@ For the context:
 ```
 This template:
 ```
-{@iterate for=obj}
+{@iterate key=obj}
     {$key} - {$value} of type {$type} {~n}
 {/iterate}
 ```
