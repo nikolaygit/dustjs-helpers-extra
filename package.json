@@ -1,6 +1,6 @@
 {
   "name": "@hyatt/dustjs-helpers-extra",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Marketing Engineering Team",
   "contributors": [
     {
@@ -15,7 +15,7 @@
   "homepage": "https://github.com/deddu/dustjs-helpers-extra",
   "description": "Extra Helpers for dustjs-linkedin package: iterate, all, some, contains",
   "scripts": {
-    "test": "node ./node_modules/grunt/lib/grunt.js test"
+    "test": "grunt test"
   },
   "main": "./lib/dust-helpers",
   "repository": {

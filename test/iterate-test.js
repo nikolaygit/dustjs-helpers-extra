@@ -13,6 +13,41 @@ var compareNumbers = function (a, b) {
   return aa - bb;
 };
 
+
+
+
+describe('range', function () {
+
+  it('simply repeats items', function () {
+    //var context = { obj: {a: "A", b: "B", c: "C" } };
+    var code = '{@range n=3}a{/range}';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, 'aaa');
+    });
+  });
+
+  it('repeats and pass the iteration number', function () {
+    //var context = { obj: {a: "A", b: "B", c: "C" } };
+    var code = '{@range n=3}a{$i}{/range}';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, 'a0a1a2');
+    });
+  });
+
+
+  it('repeats complex blocks ', function () {
+    //var context = { obj: {a: "A", b: "B", c: "C" } };
+    var code = '<ul>{@range n=3}<li>a{$i}</li>{/range}</ul>';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, '<ul><li>a0</li><li>a1</li><li>a2</li></ul>');
+    });
+  });
+
+
+
+});
+
+
 describe('iterate', function () {
 
   it('simple object iteration', function () {
