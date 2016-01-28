@@ -5,6 +5,44 @@ Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helper
 
 # Extra Helpers
 
+## Range
+Iterates over an array of integers. 
+
+params:
+- from - optional - what int to start counting from. Defaults to 0
+- n - required if `to` is missing - how many items in the array. 
+- to - required if `n` is missing - the upper boundary (not included);
+
+context:
+- $i - the iterator value. 
+
+#### Examples:
+
+simple usage
+```
+  {@range n=3}a{/range}
+  'aaa'
+```
+
+printing the loop variable
+```  
+  {@range n=3}a{$i}{/range}
+  'a0a1a2'
+```
+repeats 5 starting from 3
+
+```
+  {@range from=3 n=5 }a{$i}{/range}
+  'a3a4a5a6a7'
+```
+repeats with steps and from
+
+```
+  {@range from=2 to=10 step=2}a{$i}{/range}
+  'a2a4a6a8'
+```
+
+
 
 ## Iterate
 Iterates trough the key value pairs of an object.

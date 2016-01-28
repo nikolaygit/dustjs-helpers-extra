@@ -13,7 +13,7 @@
     }
   ],
   "homepage": "https://github.com/deddu/dustjs-helpers-extra",
-  "description": "Extra Helpers for dustjs-linkedin package: iterate, all, some, contains",
+  "description": "Extra Helpers for dustjs-linkedin package: iterate, all, some, range, contains",
   "scripts": {
     "test": "grunt test"
   },
