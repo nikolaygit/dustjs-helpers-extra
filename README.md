@@ -253,6 +253,8 @@ npm install dustjs-helpers-extra
 Run ``grunt test``.
 
 # History
+* 1.0.2 - added range from, to, and step params
+* 1.0.1 - added range helper
 * 1.0.0 - major refactoring, added some and all helpers
 * 0.4.0 - change GIT repository to https://github.com/nikolaygit/dustjs-helpers-extra
 * 0.3.1 - add travis CI.
