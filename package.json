@@ -1,6 +1,6 @@
 {
   "name": "@hyatt/dustjs-helpers-extra",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Marketing Engineering Team",
   "contributors": [
     {
@@ -8,8 +8,8 @@
       "email": "andrea.cadeddu@hyatt.com"
     },
     {
-    "name": "Nikolay Georgiev",
-    "url": "https://github.com/nikolaygit"
+      "name": "Nikolay Georgiev",
+      "url": "https://github.com/nikolaygit"
     }
   ],
   "homepage": "https://github.com/deddu/dustjs-helpers-extra",
@@ -36,7 +36,9 @@
   "peerDependencies": {
     "dustjs-helpers": "^1.5.0"
   },
-  "dependencies":{},
+  "dependencies": {
+    "js-range": "^1.0.0"
+  },
   "devDependencies": {
     "dustjs-helpers": "^1.5.0",
     "grunt": "~0.4.2",
