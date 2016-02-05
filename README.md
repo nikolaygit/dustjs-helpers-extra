@@ -1,10 +1,9 @@
 dustjs-helpers-extra  [![Build Status][travis-image]][travis-url] [![NPM version][npm-image]][npm-url]
 ====================
 
-Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus extra helpers.
+Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus more helpers.
 
-# Extra Helpers
-
+# More Helpers
 ## Range
 Iterates over an array of integers. 
 
@@ -253,6 +252,9 @@ npm install dustjs-helpers-extra
 Run ``grunt test``.
 
 # History
+this is built from a fork from [dustjs-helpers-extra](https://github.com/nikolaygit/dustjs-helpers-extra), after major refactoring and some additional helper.
+
+* 1.0.3 - goodbye extra helpers, welcome more helpers (package renamed)
 * 1.0.2 - added range from, to, and step params
 * 1.0.1 - added range helper
 * 1.0.0 - major refactoring, added some and all helpers
@@ -263,7 +265,7 @@ Run ``grunt test``.
 * 0.1.0 - iterate: new context variable ``{$parentKey}`` and tests.
 
 
-[travis-image]: https://travis-ci.org/deddu/dustjs-helpers-extra.svg?branch=master
-[travis-url]: https://travis-ci.org/deddu/dustjs-helpers-extra
-[npm-url]:  https://npmjs.org/package/dustjs-helpers-extra
-[npm-image]: http://img.shields.io/npm/v/dustjs-helpers-extra.svg?style=flat
+[travis-image]: https://travis-ci.org/deddu/dustjs-more-helpers.svg?branch=master
+[travis-url]: https://travis-ci.org/deddu/dustjs-more-helpers
+[npm-url]:  https://npmjs.org/package/dustjs-more-helpers
+[npm-image]: http://img.shields.io/npm/v/dustjs-more-helpers.svg?style=flat
