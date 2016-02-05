@@ -1,33 +1,38 @@
 {
-  "name": "dustjs-helpers-extra",
-  "version": "0.4.0",
-  "author": {
-    "name": "Nikolay Georgiev",
-    "url": "https://github.com/nikolaygit"
-  },
-  "homepage": "https://github.com/nikolaygit/dustjs-helpers-extra",
-  "description": "Extra Helpers for dustjs-linkedin package: iterate, contains",
+  "name": "dustjs-more-helpers",
+  "version": "1.0.3",
+  "author": "Andrea Cadeddu",
+  "contributors": [
+    {
+      "name": "Nikolay Georgiev",
+      "url": "https://github.com/nikolaygit"
+    }
+  ],
+  "homepage": "https://github.com/deddu/dustjs-more-helpers",
+  "description": "Even more Helpers for dustjs-linkedin package: iterate, all, some, range, contains",
   "scripts": {
     "test": "grunt test"
   },
   "main": "./lib/dust-helpers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nikolaygit/dustjs-helpers-extra.git"
+    "url": "https://github.com/deddu/dustjs-more-helpers.git"
   },
   "keywords": [
     "dust",
     "dustjs",
     "helpers",
-    "extra",
     "iterate",
-    "contains"
+    "range"
   ],
   "peerDependencies": {
-    "dustjs-helpers": "~1.5.0"
+    "dustjs-helpers": "^1.5.0"
+  },
+  "dependencies": {
+    "js-range": "1.0.0"
   },
   "devDependencies": {
-    "dustjs-helpers": "~1.5.0",
+    "dustjs-helpers": "^1.5.0",
     "grunt": "~0.4.2",
     "grunt-bump": "~0.0.13",
     "grunt-contrib-clean": "~0.5.0",

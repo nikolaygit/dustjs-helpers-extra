@@ -13,6 +13,53 @@ var compareNumbers = function (a, b) {
   return aa - bb;
 };
 
+
+
+
+describe('range', function () {
+
+  it('simply repeats items', function () {
+    var code = '{@range n=3}a{/range}';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, 'aaa');
+    });
+  });
+
+  it('repeats and pass the iteration number', function () {
+    var code = '{@range n=3}a{$i}{/range}';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, 'a0a1a2');
+    });
+  });
+
+  it('repeats complex blocks ', function () {
+    var code = '<ul>{@range n=3}<li>a{$i}</li>{/range}</ul>';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, '<ul><li>a0</li><li>a1</li><li>a2</li></ul>');
+    });
+  });
+
+  it('repeats n starting from x', function () {
+    var code = '{@range from=3 n=5 }a{$i}{/range}';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, 'a3a4a5a6a7');
+    });
+  });
+
+
+  it('repeats with steps and from', function () {
+    var code = '{@range from=2 to=10 step=2}a{$i}{/range}';
+    dust.renderSource(code, {}, function (err, out) {
+      assert.equal(out, 'a2a4a6a8');
+    });
+  });
+
+
+
+
+});
+
+
 describe('iterate', function () {
 
   it('simple object iteration', function () {
@@ -102,6 +149,22 @@ describe('iterate', function () {
   });
 
 });
+
+
+
+describe('{@some}', function() {
+
+  it('no params', function() {
+    var context = {myArr: [{"name": "AA"}, {"name": "BB"}]};
+    var code = '{@some}block{/some}';
+    dust.renderSource(code, context, function (err, out) {
+      assert.equal(out, '');
+    });
+  });
+  this.timeout(15000);
+});
+
+
 
 describe('{@contains}', function() {
 
