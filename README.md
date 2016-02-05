@@ -1,4 +1,4 @@
-dustjs-helpers-extra  [![Build Status][travis-image]][travis-url] [![NPM version][npm-image]][npm-url]
+dustjs-more-helpers  [![Build Status][travis-image]][travis-url] [![NPM version][npm-image]][npm-url]
 ====================
 
 Dust.js [official](https://github.com/linkedin/dustjs-helpers) plus more helpers.
